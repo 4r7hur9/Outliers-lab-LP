@@ -1,0 +1,59 @@
+/* ── 404 ───────────────────────────────────────────────
+   Página exibida quando a rota não é encontrada.
+   ──────────────────────────────────────────────────── */
+
+.nao-encontrado {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--espaco-3xl) var(--espaco-xl);
+  background: var(--cor-fundo);
+}
+
+.nao-encontrado__codigo {
+  font-size: clamp(6rem, 20vw, 12rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: var(--espaco-lg);
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nao-encontrado__titulo {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  margin-bottom: var(--espaco-md);
+}
+
+.nao-encontrado__descricao {
+  color: var(--cor-texto-suave);
+  font-size: 1.1rem;
+  max-width: 400px;
+  margin: 0 auto var(--espaco-2xl);
+  line-height: 1.6;
+}
+
+.nao-encontrado__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-sm);
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  color: #fff;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--raio-md);
+  text-decoration: none;
+  transition: all var(--transicao);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.nao-encontrado__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+  color: #fff;
+}

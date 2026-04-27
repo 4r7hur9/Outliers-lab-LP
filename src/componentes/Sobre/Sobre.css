@@ -1,0 +1,144 @@
+/* ── Sobre ─────────────────────────────────────────────
+   Seção que apresenta a empresa e seus valores.
+   ──────────────────────────────────────────────────── */
+
+.sobre {
+  background: var(--cor-fundo);
+}
+
+.sobre__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-3xl);
+  align-items: center;
+  margin-bottom: var(--espaco-3xl);
+}
+
+/* Bloco de texto */
+.sobre__texto-rotulo {
+  display: inline-block;
+  color: var(--cor-primaria);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: var(--espaco-md);
+}
+
+.sobre__texto h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: var(--espaco-lg);
+  line-height: 1.2;
+}
+
+.sobre__texto h2 span {
+  color: var(--cor-primaria);
+}
+
+.sobre__descricao {
+  color: var(--cor-texto-suave);
+  line-height: 1.8;
+  margin-bottom: var(--espaco-md);
+  font-size: 1.05rem;
+}
+
+/* Imagem / ilustração */
+.sobre__visual {
+  background: var(--cor-fundo-card);
+  border-radius: var(--raio-lg);
+  border: 1px solid var(--cor-borda);
+  padding: var(--espaco-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-lg);
+  box-shadow: var(--sombra-card);
+}
+
+.sobre__visual-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-md);
+}
+
+.sobre__visual-icone {
+  font-size: 1.8rem;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: var(--raio-md);
+  flex-shrink: 0;
+}
+
+.sobre__visual-info strong {
+  display: block;
+  color: var(--cor-texto);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.sobre__visual-info span {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* Cards de valores */
+.sobre__valores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-lg);
+}
+
+.sobre__valor-card {
+  background: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  padding: var(--espaco-xl);
+  text-align: center;
+  transition: all var(--transicao);
+}
+
+.sobre__valor-card:hover {
+  border-color: var(--cor-primaria);
+  box-shadow: var(--sombra-hover);
+  transform: translateY(-4px);
+}
+
+.sobre__valor-emoji {
+  font-size: 2.5rem;
+  margin-bottom: var(--espaco-md);
+  display: block;
+}
+
+.sobre__valor-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--espaco-sm);
+  color: var(--cor-primaria);
+}
+
+.sobre__valor-card p {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre__valores {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre__valores {
+    grid-template-columns: 1fr;
+  }
+}

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Relatórios e artefatos de teste
+test-results/
+playwright-report/
+coverage/
