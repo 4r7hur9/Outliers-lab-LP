@@ -1,68 +1,164 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* =========================================================
+   Estilos globais – Outliers Lab
+   ========================================================= */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* ── Variáveis de design ──────────────────────────────── */
+:root {
+  /* Cores principais */
+  --cor-primaria: #6366f1;
+  --cor-primaria-escura: #4f46e5;
+  --cor-secundaria: #8b5cf6;
+  --cor-acento: #a78bfa;
+
+  /* Cores neutras */
+  --cor-fundo: #0f0f1a;
+  --cor-fundo-card: #1a1a2e;
+  --cor-fundo-elevado: #16213e;
+  --cor-texto: #e2e8f0;
+  --cor-texto-suave: #94a3b8;
+  --cor-borda: #2d2d4e;
+
+  /* Tipografia */
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 16px;
+
+  color-scheme: dark;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Espaçamento */
+  --espaco-xs: 0.25rem;
+  --espaco-sm: 0.5rem;
+  --espaco-md: 1rem;
+  --espaco-lg: 1.5rem;
+  --espaco-xl: 2rem;
+  --espaco-2xl: 3rem;
+  --espaco-3xl: 4rem;
+
+  /* Bordas */
+  --raio-sm: 6px;
+  --raio-md: 12px;
+  --raio-lg: 20px;
+  --raio-pill: 9999px;
+
+  /* Sombras */
+  --sombra-card: 0 4px 24px rgba(99, 102, 241, 0.1);
+  --sombra-hover: 0 8px 40px rgba(99, 102, 241, 0.25);
+
+  /* Transições */
+  --transicao: 0.25s ease;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* ── Reset e base ─────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+main {
+  flex: 1;
+}
+
+/* ── Tipografia ──────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+  color: var(--cor-texto);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: color var(--transicao);
+}
+
+a:hover {
+  color: var(--cor-acento);
+}
+
+/* ── Botões base ─────────────────────────────────────── */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--raio-md);
+  padding: 0.75rem 1.5rem;
+  transition: all var(--transicao);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* ── Utilitários ─────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaco-xl);
 }
+
+.secao {
+  padding: var(--espaco-3xl) 0;
+}
+
+.titulo-secao {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--espaco-sm);
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitulo-secao {
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: 1.1rem;
+  margin-bottom: var(--espaco-3xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Scrollbar personalizada ─────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cor-fundo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor-primaria);
+  border-radius: var(--raio-pill);
+}
+

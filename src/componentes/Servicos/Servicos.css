@@ -1,0 +1,91 @@
+/* ── Serviços ───────────────────────────────────────────
+   Grid de cards com os serviços oferecidos.
+   ──────────────────────────────────────────────────── */
+
+.servicos {
+  background: var(--cor-fundo-card);
+}
+
+.servicos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--espaco-xl);
+}
+
+.servicos__card {
+  background: var(--cor-fundo-elevado);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-xl);
+  transition: all var(--transicao);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.servicos__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+  transform: scaleX(0);
+  transition: transform var(--transicao);
+  transform-origin: left;
+}
+
+.servicos__card:hover {
+  border-color: var(--cor-primaria);
+  box-shadow: var(--sombra-hover);
+  transform: translateY(-6px);
+}
+
+.servicos__card:hover::before {
+  transform: scaleX(1);
+}
+
+.servicos__card-icone {
+  font-size: 2.8rem;
+  margin-bottom: var(--espaco-lg);
+  display: block;
+  line-height: 1;
+}
+
+.servicos__card-titulo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-sm);
+}
+
+.servicos__card-descricao {
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: var(--espaco-lg);
+}
+
+.servicos__card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-xs);
+}
+
+.servicos__tag {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--cor-acento);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--raio-pill);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .servicos__grid {
+    grid-template-columns: 1fr;
+  }
+}

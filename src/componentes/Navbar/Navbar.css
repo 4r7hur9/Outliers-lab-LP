@@ -1,0 +1,171 @@
+/* ── Navbar ────────────────────────────────────────────
+   Barra de navegação fixa no topo da página.
+   Colapsa para menu hambúrguer em telas pequenas.
+   ──────────────────────────────────────────────────── */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 70px;
+  background: rgba(15, 15, 26, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--cor-borda);
+  display: flex;
+  align-items: center;
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaco-xl);
+}
+
+/* Logotipo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-sm);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--cor-texto);
+  letter-spacing: -0.5px;
+}
+
+.navbar__logo-icone {
+  width: 36px;
+  height: 36px;
+}
+
+.navbar__logo-texto span {
+  color: var(--cor-primaria);
+}
+
+/* Links de navegação (desktop) */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-xl);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__links a {
+  color: var(--cor-texto-suave);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: var(--espaco-xs) var(--espaco-sm);
+  border-radius: var(--raio-sm);
+  transition: color var(--transicao);
+  position: relative;
+}
+
+.navbar__links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cor-primaria);
+  transition: width var(--transicao);
+}
+
+.navbar__links a:hover,
+.navbar__links a.ativo {
+  color: var(--cor-texto);
+}
+
+.navbar__links a:hover::after,
+.navbar__links a.ativo::after {
+  width: 100%;
+}
+
+/* Botão CTA na navbar */
+.navbar__cta {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  color: #fff !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: var(--raio-md) !important;
+}
+
+.navbar__cta::after {
+  display: none !important;
+}
+
+.navbar__cta:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── Hambúrguer (mobile) ─────────────────────────────── */
+.navbar__hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  padding: var(--espaco-sm);
+  border-radius: var(--raio-sm);
+}
+
+.navbar__hamburguer span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cor-texto);
+  border-radius: 2px;
+  transition: all var(--transicao);
+}
+
+/* Estado aberto */
+.navbar__hamburguer--aberto span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__hamburguer--aberto span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__hamburguer--aberto span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Responsividade ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .navbar__hamburguer {
+    display: flex;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--cor-fundo-card);
+    border-bottom: 1px solid var(--cor-borda);
+    padding: var(--espaco-lg) var(--espaco-xl);
+    gap: var(--espaco-md);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transicao), opacity var(--transicao);
+  }
+
+  .navbar__links--aberto {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navbar__links a {
+    font-size: 1rem;
+    padding: var(--espaco-sm) 0;
+  }
+}

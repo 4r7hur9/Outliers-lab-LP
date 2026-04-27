@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "verbatimModuleSyntax": false,
+    "allowImportingTsExtensions": false,
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "esModuleInterop": true
+  },
+  "include": ["src", "__mocks__", "jest.setup.ts"]
+}
