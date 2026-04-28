@@ -14,7 +14,7 @@ Plataforma inovadora para análise e exploração de dados atípicos em datasets
 
 ## 📁 Estrutura do Projeto
 
-```
+```text
 src/
 ├── components/          # Componentes reutilizáveis
 │   ├── Hero/           # Seção hero da landing page
@@ -72,17 +72,17 @@ npm run preview
 
 ## 📝 Scripts Disponíveis
 
-| Script                  | Descrição                                                   |
-| ----------------------- | ----------------------------------------------------------- |
-| `npm run dev`           | Inicia servidor de desenvolvimento em http://localhost:5173 |
-| `npm run build`         | Compila TypeScript e cria build otimizado                   |
-| `npm run lint`          | Executa ESLint para validar código                          |
-| `npm run test`          | Executa todos os testes unitários                           |
-| `npm run test:watch`    | Executa testes em modo watch                                |
-| `npm run test:coverage` | Gera relatório de cobertura de testes                       |
-| `npm run test:e2e`      | Executa testes E2E com Playwright                           |
-| `npm run test:e2e:ui`   | Executa testes E2E com interface visual                     |
-| `npm run test:all`      | Executa lint, tests unitários e E2E                         |
+| Script                  | Descrição                                                     |
+| ----------------------- | ------------------------------------------------------------- |
+| `npm run dev`           | Inicia servidor de desenvolvimento em <http://localhost:5173> |
+| `npm run build`         | Compila TypeScript e cria build otimizado                     |
+| `npm run lint`          | Executa ESLint para validar código                            |
+| `npm run test`          | Executa todos os testes unitários                             |
+| `npm run test:watch`    | Executa testes em modo watch                                  |
+| `npm run test:coverage` | Gera relatório de cobertura de testes                         |
+| `npm run test:e2e`      | Executa testes E2E com Playwright                             |
+| `npm run test:e2e:ui`   | Executa testes E2E com interface visual                       |
+| `npm run test:all`      | Executa lint, tests unitários e E2E                           |
 
 ## 🧪 Testes
 
@@ -163,7 +163,7 @@ Componentes utilizam:
 
 Componentes atômicos e bem estruturados:
 
-```
+```text
 Hero/
   └── Hero.tsx
 
